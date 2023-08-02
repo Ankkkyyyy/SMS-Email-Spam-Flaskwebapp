@@ -1,9 +1,8 @@
 from flask import Flask, jsonify ,render_template
-# import pickle
-import joblib as joblib
+import pickle
+# import joblib as joblib
 import nltk
-# import jsonify
-# nltk.download('punkt')
+
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import  sklearn
@@ -13,8 +12,8 @@ app = Flask(__name__)
 ps = PorterStemmer() 
 
 
-# tfidf = pickle.load('vectorizer.pkl','rb')
-# model = pickle.load('model.pkl','rb')
+tfidf = pickle.load('vectorizer.pkl','rb')
+model = pickle.load('model.pkl','rb')
 # with open('vectorizer.pkl', 'rb') as vectorizer_file:
 #     tfidf = pickle.load(vectorizer_file)
 #
