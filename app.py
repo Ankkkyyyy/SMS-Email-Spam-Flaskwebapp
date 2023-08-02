@@ -1,5 +1,6 @@
 from flask import Flask, jsonify ,render_template
-import pickle 
+import pickle
+import joblib as joblib
 import nltk
 # import jsonify
 # nltk.download('punkt')
@@ -14,12 +15,14 @@ ps = PorterStemmer()
 
 # tfidf = pickle.load('vectorizer.pkl','rb')
 # model = pickle.load('model.pkl','rb')
-with open('vectorizer.pkl', 'rb') as vectorizer_file:
-    tfidf = pickle.load(vectorizer_file)
+# with open('vectorizer.pkl', 'rb') as vectorizer_file:
+#     tfidf = pickle.load(vectorizer_file)
+#
+# with open('model.pkl', 'rb') as model_file:
+#     model = pickle.load(model_file)
 
-with open('model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
-
+tfidf = joblib.load('vectorizer.pkl')
+model = joblib.load('model.pkl')
 def transform_text(text):
     text = text.lower() # lowercase
     text = nltk.word_tokenize(text)  #Tokenization 
