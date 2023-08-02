@@ -1,5 +1,5 @@
 from flask import Flask, jsonify ,render_template
-import pickle
+# import pickle
 import joblib as joblib
 import nltk
 # import jsonify
@@ -87,4 +87,4 @@ def spam_detector_api():
 
 
 
-# app.run(debug=True)
+app.run(debug=True)
