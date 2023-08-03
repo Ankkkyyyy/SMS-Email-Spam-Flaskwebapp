@@ -65,4 +65,4 @@ def spam_detector_api():
 
 
 
-app.run(debug=True)
+# app.run(debug=True)
