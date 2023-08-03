@@ -32,7 +32,8 @@ def detector():
 
        transformed_msg = transform_text(data)
        vector_input=tfidf.transform([transformed_msg])
-       result =model.predict(vector_input)
+       result =model.predict(vector_input)[0]
+       print(result)
        if result ==1:
            output = "Spam"
        else:
@@ -64,4 +65,4 @@ def spam_detector_api():
 
 
 
-# app.run(debug=True)
+app.run(debug=True)
