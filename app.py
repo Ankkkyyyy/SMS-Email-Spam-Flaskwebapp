@@ -48,7 +48,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/",methods=['GET','POST'])
+@app.route("/detector",methods=['GET','POST'])
 def detector():
     if req.method == "POST":
        data =req.form['data']
