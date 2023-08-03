@@ -48,7 +48,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/detector",methods=['GET','POST'])
+@app.route("/",methods=['GET','POST'])
 def detector():
     if req.method == "POST":
        data =req.form['data']
@@ -60,7 +60,8 @@ def detector():
            output = "Spam"
        else:
            output =  "Not Spam !"
-       return render_template('index.html',result = output)
+       return render_template('index.html',result =output)
+    return "Invalid request"
     
 @app.route('/api/spamdetector', methods=['GET','POST'])
 def spam_detector_api():
@@ -85,4 +86,4 @@ def spam_detector_api():
 
 
 
-# app.run(debug=True)
+app.run(debug=True)
