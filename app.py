@@ -20,8 +20,8 @@ ps = PorterStemmer()
 # with open('model.pkl', 'rb') as model_file:
 #     model = pickle.load(model_file)
 
-tfidf = joblib.load('static/files/vectorizer2.pkl')
-model = joblib.load('static/files/model2.pkl')
+tfidf = joblib.load('vectorizer2.pkl')
+model = joblib.load('model2.pkl')
 def transform_text(text):
     text = text.lower()  # lowercase
     text = nltk.word_tokenize(text)  # Tokenization
