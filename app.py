@@ -1,6 +1,6 @@
 from flask import Flask, jsonify ,render_template,url_for
-# import pickle
-import joblib as joblib
+import pickle
+# import joblib as joblib
 import sklearn
 from flask import request as req
 from textTransformer import transform_text
@@ -16,9 +16,11 @@ app = Flask(__name__)
 # with open('model.pkl', 'rb') as model_file:
 #     model = pickle.load(model_file)
 
-tfidf = joblib.load('vectorizer2.pkl')
-model = joblib.load('model2.pkl')
+# tfidf = joblib.load('vectorizer2.pkl')
+# model = joblib.load('model2.pkl')
 
+cv = pickle.load(open("vectorizer2.pkl", 'rb'))
+clf = pickle.load(open("model2.pkl", 'rb'))
 
 @app.route('/')
 def index():
