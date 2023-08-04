@@ -19,8 +19,8 @@ app = Flask(__name__)
 # tfidf = joblib.load('vectorizer2.pkl')
 # model = joblib.load('model2.pkl')
 
-tfidf = pickle.load(open("model/vectorizer2.pkl", 'rb'))
-model  = pickle.load(open("model/model2.pkl", 'rb'))
+tfidf = pickle.load(open("models/vectorizer.pkl", 'rb'))
+model  = pickle.load(open("models/model.pkl", 'rb'))
 
 @app.route('/')
 def index():
